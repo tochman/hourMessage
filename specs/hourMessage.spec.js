@@ -1,34 +1,32 @@
-const hourMessage = require("../helpers/hourMessage");
-let hourStub
+const hourMessage = require("../src/hourMessage");
 describe("hourMessage()", () => {
-  afterEach(() => {
-    hourStub.restore()
-  });
+  let hourStub;
+  afterEach(() => hourStub.restore());
   subject(() => hourMessage());
-  describe('between 0 and 4 am', () => {
+  describe("between 23 and 5", () => {
     beforeEach(() => {
-      hourStub = sinon.stub(Date.prototype, 'getHours').returns(4)
+      hourStub = sinon.stub(Date.prototype, "getHours").returns(4);
     });
-    it(()=> is.expected.to.equal('Good night'))
+    it(() => is.expected.to.equal("Good night"));
   });
-  describe('between 5 and 11 am', () => {
+  describe("between 6 and 11", () => {
     beforeEach(() => {
-      hourStub = sinon.stub(Date.prototype, 'getHours').returns(11)  
+      hourStub = sinon.stub(Date.prototype, "getHours").returns(11);
     });
 
-    it(()=> is.expected.to.equal('Good morning'))
+    it(() => is.expected.to.equal("Good morning"));
   });
-  describe('between 12 and 17 pm', () => {
+  describe("between 12 and 17", () => {
     beforeEach(() => {
-      hourStub = sinon.stub(Date.prototype, 'getHours').returns(17)  
+      hourStub = sinon.stub(Date.prototype, "getHours").returns(17);
     });
-    it(()=> is.expected.to.equal('Good afternoon'))
+    it(() => is.expected.to.equal("Good afternoon"));
   });
 
-  describe('between 18 and 24 pm', () => {
+  describe("between 18 and 22", () => {
     beforeEach(() => {
-      hourStub = sinon.stub(Date.prototype, 'getHours').returns(24)  
+      hourStub = sinon.stub(Date.prototype, "getHours").returns(22);
     });
-    it(()=> is.expected.to.equal('Good evening'))
+    it(() => is.expected.to.equal("Good evening"));
   });
 });

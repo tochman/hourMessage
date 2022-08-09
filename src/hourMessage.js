@@ -1,11 +1,16 @@
 const dataSet = [
   {
-    startHour: 0,
-    endHour: 4,
+    startHour: 23,
+    endHour: 24,
     message: "Good night",
   },
   {
-    startHour: 5,
+    startHour: 0,
+    endHour: 5,
+    message: "Good night",
+  },
+  {
+    startHour: 6,
     endHour: 11,
     message: "Good morning",
   },
@@ -16,7 +21,7 @@ const dataSet = [
   },
   {
     startHour: 18,
-    endHour: 24,
+    endHour: 22,
     message: "Good evening",
   },
 ];
